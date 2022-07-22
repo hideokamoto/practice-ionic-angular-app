@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, createSelector } from '@ngrx/store';
-import { Souvenir, SouvenirService } from './souvenir.service';
+import { SouvenirService } from './souvenir.service';
 import { selectSouvenirFeature } from './store';
 
 @Component({
@@ -10,7 +10,6 @@ import { selectSouvenirFeature } from './store';
 })
 export class SouvenirPage implements OnInit {
 
-  //public souvenires: Souvenir[] = [];
   public souvenires$ = this.store.select(createSelector(selectSouvenirFeature, state => state.items));
 
   constructor(
@@ -20,9 +19,7 @@ export class SouvenirPage implements OnInit {
 
 
   ngOnInit() {
-    this.service.fetchSouvenires();
-    //.subscribe(souvenires => this.souvenires = souvenires);
-
+    this.service.fetchSouvenires().subscribe();
   }
 
 }

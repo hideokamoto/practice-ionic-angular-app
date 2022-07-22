@@ -1,15 +1,26 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>souvenir</ion-title>
+    <ion-title>
+      お土産データ
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="souvenires$ | async as souvenires">
-  <ion-list>
-    <app-list-souvenires    
-      *ngFor="let souvenir of souvenires"
-      [souvenir]="souvenir"
-    ></app-list-souvenires>
-  </ion-list>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">お土産データ</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div id="container" *ngIf="souvenires$ | async as souvenires">
+
+    <ion-list>
+      <app-list-souvenires    
+        *ngFor="let souvenir of souvenires"
+        [souvenir]="souvenir"
+      ></app-list-souvenires>
+    </ion-list>
+  </div>
 </ion-content>
+
