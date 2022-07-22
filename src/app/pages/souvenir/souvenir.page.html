@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>souvenir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-list-souvenires
+      *ngFor="let souvenir of souvenires"
+      [souvenir]="souvenir"
+    ></app-list-souvenires>
+  </ion-list>
+
+</ion-content>

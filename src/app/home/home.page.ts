@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { DataService, Message } from '../services/data.service';
+import { Component, OnInit } from '@angular/core';
+import { DataService, Message, Souvenir } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   constructor(private data: DataService) {}
+
+  public messages: Message[] = []
+  public souvenires: Souvenir[] = []
 
   refresh(ev) {
     setTimeout(() => {
@@ -15,8 +18,11 @@ export class HomePage {
     }, 3000);
   }
 
-  getMessages(): Message[] {
-    return this.data.getMessages();
+  ngOnInit(): void {
+    this.messages = this.data.getMessages();
+    this.data.listSouvenir()
+      .subscribe(souvenires => {
+        this.souvenires = souvenires.filter(Boolean)
+      })
   }
-
 }

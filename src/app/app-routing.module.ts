@@ -15,6 +15,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'souvenir',
+    loadChildren: () => import('./pages/souvenir/souvenir.module').then( m => m.SouvenirPageModule)
+  },
 ];
 
 @NgModule({
