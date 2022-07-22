@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { StoreModule } from '@ngrx/store';
 
 import { SouvenirPageRoutingModule } from './souvenir-routing.module';
 
 import { SouvenirPage } from './souvenir.page';
 import { ListSouveniresComponent } from './list-souvenires/list-souvenires.component';
+import { souvenirFeatureKey, souvenirReducer } from './store';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SouvenirPageRoutingModule
+    SouvenirPageRoutingModule,
+    StoreModule.forFeature(souvenirFeatureKey, souvenirReducer)
   ],
   declarations: [SouvenirPage, ListSouveniresComponent]
 })

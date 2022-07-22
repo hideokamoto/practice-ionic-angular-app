@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="souvenires$ | async as souvenires">
   <ion-list>
-    <app-list-souvenires
+    <app-list-souvenires    
       *ngFor="let souvenir of souvenires"
       [souvenir]="souvenir"
     ></app-list-souvenires>

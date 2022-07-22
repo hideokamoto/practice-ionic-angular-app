@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { from } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { setSouvenir } from './store';
 
 export type Souvenir = {
   id: string;
@@ -14,12 +16,13 @@ export type Souvenir = {
 })
 export class SouvenirService {
 
-  constructor() { }
-
-  public list(): Observable<Souvenir[]> {
-    return from(
+  constructor(private readonly store: Store<{}>) { }
+  public fetchSouvenires() {
+    from(
       import('./dataset/kyoto-souvenir.json')
-      .then(data => Object.values(data))
-    );
+        .then(data => Object.values(data))
+    ).subscribe(items =>{
+      this.store.dispatch(setSouvenir(items));
+    });
   }
 }
