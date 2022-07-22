@@ -17,6 +17,10 @@ const routes: Routes = [
         pathMatch: 'full',
       }]
   },
+  {
+    path: 'sights',
+    loadChildren: () => import('./pages/sights/sights.module').then( m => m.SightsPageModule)
+  },
 ];
 
 @NgModule({
