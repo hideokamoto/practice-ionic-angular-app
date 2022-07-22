@@ -34,7 +34,7 @@ export type Souvenir = {
   field22: string;
   field23: string;
   field24: string;
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -98,19 +98,19 @@ export class DataService {
       read: false
     }
   ];
+  private _souvenirSubject = new BehaviorSubject<Souvenir[]>([]);
 
   constructor() { }
 
-  private _souvenirSubject = new BehaviorSubject<Souvenir[]>([])
 
-  public listSouvenir():Observable<Souvenir[]> {
+  public listSouvenir(): Observable<Souvenir[]> {
     return from(
       import('../services/kyoto-souvenir.json')
       .then(data => {
-        console.log(Object.values(data))
-        return Object.values(data)
+        console.log(Object.values(data));
+        return Object.values(data);
       })
-    )
+    );
   }
 
   public getMessages(): Message[] {

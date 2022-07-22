@@ -7,10 +7,10 @@ import { DataService, Message, Souvenir } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  public messages: Message[] = [];
+  public souvenires: Souvenir[] = [];
   constructor(private data: DataService) {}
 
-  public messages: Message[] = []
-  public souvenires: Souvenir[] = []
 
   refresh(ev) {
     setTimeout(() => {
@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
     this.messages = this.data.getMessages();
     this.data.listSouvenir()
       .subscribe(souvenires => {
-        this.souvenires = souvenires.filter(Boolean)
-      })
+        this.souvenires = souvenires.filter(Boolean);
+      });
   }
 }

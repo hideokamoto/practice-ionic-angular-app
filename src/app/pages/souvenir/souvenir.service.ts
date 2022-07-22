@@ -26,7 +26,7 @@ export type Souvenir = {
   field22: string;
   field23: string;
   field24: string;
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +39,6 @@ export class SouvenirService {
     return from(
       import('./dataset/kyoto-souvenir.json')
       .then(data => Object.values(data))
-    )
+    );
   }
 }

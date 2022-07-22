@@ -8,8 +8,8 @@ import { Souvenir } from 'src/app/services/data.service';
 })
 export class ListSouveniresComponent  {
 
-  constructor() { }
 
   @Input() souvenir: Souvenir;
+  constructor() { }
 
 }
