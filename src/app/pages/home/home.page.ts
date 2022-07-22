@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Souvenir } from '../pages/souvenir/souvenir.service';
-import { DataService, Message } from '../services/data.service';
+import { Souvenir } from '../souvenir/souvenir.service';
+import { DataService, Message } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
