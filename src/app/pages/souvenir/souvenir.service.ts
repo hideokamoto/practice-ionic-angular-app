@@ -2,30 +2,11 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 
 export type Souvenir = {
-  field1: string;
-  field2: string;
-  field3: string;
-  field4: string;
-  field5: string;
-  field6: string;
-  field7: string;
-  field8: string;
-  field9: string;
-  field10: string;
-  field11: string;
-  field12: string;
-  field13: string;
-  field14: string;
-  field15: string;
-  field16: string;
-  field17: string;
-  field18: string;
-  field19: string;
-  field20: string;
-  field21: string;
-  field22: string;
-  field23: string;
-  field24: string;
+  id: string;
+  name: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  name_kana: string;
+  description: string;
 };
 
 @Injectable({

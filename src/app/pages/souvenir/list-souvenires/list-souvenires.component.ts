@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Souvenir } from 'src/app/services/data.service';
+import { Souvenir } from '../souvenir.service';
 
 @Component({
   selector: 'app-list-souvenires',

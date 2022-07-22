@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message, Souvenir } from '../services/data.service';
+import { Message } from '../services/data.service';
 
 @Component({
   selector: 'app-message',
@@ -8,7 +8,6 @@ import { Message, Souvenir } from '../services/data.service';
 })
 export class MessageComponent implements OnInit {
   @Input() message: Message;
-  @Input() souvenir: Souvenir;
 
   constructor() { }
 
