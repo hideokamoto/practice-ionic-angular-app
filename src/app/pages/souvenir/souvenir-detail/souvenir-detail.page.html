@@ -1,0 +1,34 @@
+<ng-container *ngIf="souvenir">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button [text]="getBackButtonText()" defaultHref="/souvenir"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        {{souvenir.name}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button [text]="getBackButtonText()" defaultHref="/souvenir"></ion-back-button>
+        </ion-buttons>
+        <ion-title size="large">{{souvenir.name}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-item>
+      <ion-label class='ion-text-wrap'>
+        <h2>{{souvenir.name}} <small>({{souvenir.name_kana}})</small></h2>
+      </ion-label>
+    </ion-item>
+    <div class='ion-padding'>
+      {{souvenir.description}}
+    </div>
+  </ion-content>
+</ng-container>
+
+
+

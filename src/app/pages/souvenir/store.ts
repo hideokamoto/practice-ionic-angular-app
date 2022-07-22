@@ -5,7 +5,7 @@ const souvenirSlice = createSlice({
     name: 'souvenir',
     initialState: {
         _items: [],
-        items: []
+        items: [],
     },
     reducers: {
         setSouvenir: (state, action) => {

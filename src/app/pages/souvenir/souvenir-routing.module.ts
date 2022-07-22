@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: SouvenirPage
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./souvenir-detail/souvenir-detail.module').then( m => m.SouvenirDetailPageModule)
   }
 ];
 
