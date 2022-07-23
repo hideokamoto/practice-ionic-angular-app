@@ -1,5 +1,19 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { TitleStrategy, RouterStateSnapshot } from '@angular/router';
+
+@Injectable()
+export class AppTitleStrategy extends TitleStrategy {
+  constructor(private titleService: Title) {
+    super();
+  }
+
+  override updateTitle(snapshot: RouterStateSnapshot) {
+    const title = this.buildTitle(snapshot);
+    this.titleService.setTitle(title ? `${title} | My App` : 'My App');
+  }
+}
 
 const routes: Routes = [
   {
@@ -29,6 +43,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: TitleStrategy, useClass: AppTitleStrategy }]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { createSelector, Store } from '@ngrx/store';
@@ -16,7 +16,7 @@ export class SouvenirDetailPage implements OnInit {
     private readonly activatedRoute: ActivatedRoute,
     private readonly store: Store,
     private readonly souvenirService: SouvenirService,
-    private readonly title: Title
+    private readonly title: Title,
   ) { }
 
   public ngOnInit() {
