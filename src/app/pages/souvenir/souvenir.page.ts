@@ -14,7 +14,7 @@ export class SouvenirPage implements OnInit {
 
   constructor(
     private readonly service: SouvenirService,
-    private readonly store: Store<{}>
+    private readonly store: Store
   ) { }
 
 

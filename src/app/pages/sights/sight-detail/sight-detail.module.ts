@@ -4,21 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SightsPageRoutingModule } from './sights-routing.module';
+import { SightDetailPageRoutingModule } from './sight-detail-routing.module';
 
-import { SightsPage } from './sights.page';
+import { SightDetailPage } from './sight-detail.page';
 import { StoreModule } from '@ngrx/store';
-import { sightsFeatureKey, sightsReducer } from './store';
-import { ListSightItemComponent } from './list-sight-item/list-sight-item.component';
+import { sightsFeatureKey, sightsReducer } from '../store';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SightsPageRoutingModule,
+    SightDetailPageRoutingModule,
     StoreModule.forFeature(sightsFeatureKey, sightsReducer)
   ],
-  declarations: [SightsPage, ListSightItemComponent]
+  declarations: [SightDetailPage]
 })
-export class SightsPageModule {}
+export class SightDetailPageModule {}

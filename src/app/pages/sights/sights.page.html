@@ -1,9 +1,28 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>sights</ion-title>
+    <ion-title>
+      観光地データ
+    </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+</ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">観光地データ</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <div id="container" *ngIf="sights$ | async as sights" >
+      <ion-list>
+        <app-list-sight-item
+          *ngFor="let sight of sights"
+          [sight]='sight'
+          >
+        </app-list-sight-item>
+      </ion-list>
+  </div>
 </ion-content>
+

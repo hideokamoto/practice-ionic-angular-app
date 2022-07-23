@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Souvenir } from '../souvenir/souvenir.service';
-import { DataService, Message } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
-  public messages: Message[] = [];
+export class HomePage {
   public souvenires: Souvenir[] = [];
-  constructor(private data: DataService) {}
 
 
   refresh(ev) {
@@ -19,7 +16,4 @@ export class HomePage implements OnInit {
     }, 3000);
   }
 
-  ngOnInit(): void {
-    this.messages = this.data.getMessages();
-  }
 }

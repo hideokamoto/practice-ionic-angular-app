@@ -10,7 +10,7 @@ import { filterSouvenir } from '../store';
 export class SearchSouveniresComponent {
 
   constructor(
-    private readonly store: Store<{}>,
+    private readonly store: Store,
   ) { }
 
   public searchByName(event: Event) {

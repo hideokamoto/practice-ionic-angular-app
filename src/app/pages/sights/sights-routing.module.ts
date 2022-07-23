@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: SightsPage
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./sight-detail/sight-detail.module').then( m => m.SightDetailPageModule)
   }
 ];
 

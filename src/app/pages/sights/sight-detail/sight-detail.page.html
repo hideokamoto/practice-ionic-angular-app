@@ -1,0 +1,35 @@
+<ng-container *ngIf="sight">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button [text]="getBackButtonText()" defaultHref="/sights"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        {{sight.name}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button [text]="getBackButtonText()" defaultHref="/sights"></ion-back-button>
+        </ion-buttons>
+        <ion-title size="large">{{sight.name}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-item>
+      <ion-label class='ion-text-wrap'>
+        <h2>{{sight.name}}</h2>
+        <h3><small>({{sight.name_kana}})</small></h3>
+      </ion-label>
+    </ion-item>
+    <div class='ion-padding'>
+      {{sight.description}}
+    </div>
+  </ion-content>
+</ng-container>
+
+
+

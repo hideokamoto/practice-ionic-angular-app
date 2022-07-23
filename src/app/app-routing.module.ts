@@ -15,12 +15,13 @@ const routes: Routes = [
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
-      }]
-  },
-  {
-    path: 'sights',
-    loadChildren: () => import('./pages/sights/sights.module').then( m => m.SightsPageModule)
-  },
+      },
+      {
+        path: 'sights',
+        loadChildren: () => import('./pages/sights/sights.module').then( m => m.SightsPageModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({

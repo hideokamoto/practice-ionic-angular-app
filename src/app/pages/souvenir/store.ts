@@ -4,18 +4,18 @@ import { createFeatureSelector } from '@ngrx/store';
 const souvenirSlice = createSlice({
     name: 'souvenir',
     initialState: {
-        _items: [],
+        souvenires: [],
         items: [],
     },
     reducers: {
         setSouvenir: (state, action) => {
             state.items = action.payload;
-            state._items = state.items;
+            state.souvenires = state.items;
         },
         filterSouvenir: (state, action) => {
             const name = action.payload;
             if (name) {
-                state.items = state._items.filter(item => {
+                state.items = state.souvenires.filter(item => {
                     if (item.name) {
                         return item.name.includes(name)
                         || item.name_kana.includes(name);
@@ -23,7 +23,7 @@ const souvenirSlice = createSlice({
                     return true;
                 });
             } else {
-                state.items = state._items;
+                state.items = state.souvenires;
             }
         }
     }
