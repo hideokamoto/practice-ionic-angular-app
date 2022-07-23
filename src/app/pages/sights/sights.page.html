@@ -5,6 +5,7 @@
     </ion-title>
   </ion-toolbar>
   <ion-toolbar>
+    <app-search-sights></app-search-sights>
 </ion-toolbar>
 </ion-header>
 
@@ -13,6 +14,9 @@
     <ion-toolbar>
       <ion-title size="large">観光地データ</ion-title>
     </ion-toolbar>
+    <ion-toolbar>
+      <app-search-sights></app-search-sights>
+  </ion-toolbar>
   </ion-header>
 
   <div id="container" *ngIf="sights$ | async as sights" >
