@@ -4,7 +4,7 @@
       お土産データ
     </ion-title>
   </ion-toolbar>
-  <ion-toolbar>
+  <ion-toolbar *ngIf="!isIos()">
   <app-search-souvenires></app-search-souvenires>
 </ion-toolbar>
 </ion-header>

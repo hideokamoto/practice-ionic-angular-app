@@ -4,7 +4,7 @@
       観光地データ
     </ion-title>
   </ion-toolbar>
-  <ion-toolbar>
+  <ion-toolbar *ngIf="!isIos()">
     <app-search-sights></app-search-sights>
 </ion-toolbar>
 </ion-header>
