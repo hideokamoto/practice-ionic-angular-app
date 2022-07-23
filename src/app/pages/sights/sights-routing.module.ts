@@ -6,7 +6,8 @@ import { SightsPage } from './sights.page';
 const routes: Routes = [
   {
     path: '',
-    component: SightsPage
+    component: SightsPage,
+    title: '観光地データ'
   },
   {
     path: ':id',

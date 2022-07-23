@@ -6,7 +6,8 @@ import { SouvenirPage } from './souvenir.page';
 const routes: Routes = [
   {
     path: '',
-    component: SouvenirPage
+    component: SouvenirPage,
+    title: 'お土産データ'
   },
   {
     path: ':id',

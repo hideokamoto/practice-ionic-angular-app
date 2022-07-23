@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { createSelector, Store } from '@ngrx/store';
 import { Sight, SightsService } from '../sights.service';
@@ -14,7 +15,8 @@ export class SightDetailPage implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly store: Store,
-    private readonly service: SightsService
+    private readonly service: SightsService,
+    private readonly title: Title
   ) { }
   public ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -28,6 +30,7 @@ export class SightDetailPage implements OnInit {
               this.loadSouvenir(id).subscribe(item => this.sight = item);
             });
         }
+        this.title.setTitle(this.sight.name);
       });
   }
 
@@ -35,7 +38,7 @@ export class SightDetailPage implements OnInit {
   public getBackButtonText() {
     const win = window as any;
     const mode = win && win.Ionic && win.Ionic.mode;
-    return mode === 'ios' ? 'Inbox' : '';
+    return mode === 'ios' ? '戻る' : '';
   }
 
   private loadSouvenir(id: string) {

@@ -6,6 +6,7 @@ const routes: Routes = [
     path: '',
     children: [{
         path: 'home',
+        title: 'このアプリについて',
         loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
       },
       {
