@@ -21,7 +21,8 @@
   </ion-toolbar>
   </ion-header>
 
-  <div id="container" *ngIf="sights$ | async as sights" >
+  <div id="container"  >
+    <ng-container *ngIf="sights$ | async as sights; else listSightsSkeleton">
       <ion-list>
         <app-list-sight-item
           *ngFor="let sight of sights"
@@ -29,6 +30,11 @@
           >
         </app-list-sight-item>
       </ion-list>
+
+    </ng-container>
+    <ng-template #listSightsSkeleton>
+      <app-list-item-skeleton></app-list-item-skeleton>
+    </ng-template>
   </div>
 </ion-content>
 

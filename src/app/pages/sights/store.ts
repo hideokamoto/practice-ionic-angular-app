@@ -5,7 +5,6 @@ import { Sight } from './sights.service';
 type State = {
     sights: Sight[];
     items: Sight[];
-
 };
 const sightsSlice = createSlice<State, {
     setSights: CaseReducer<State, {

@@ -21,13 +21,18 @@
   </ion-toolbar>
   </ion-header>
 
-  <div id="container" *ngIf="souvenires$ | async as souvenires" >
+  <div id="container" >
+    <ng-container *ngIf="souvenires$ | async as souvenires; else listSouvenirSkelton">
       <ion-list>
         <app-list-souvenires    
           *ngFor="let souvenir of souvenires"
           [souvenir]="souvenir"
         ></app-list-souvenires>
       </ion-list>
+    </ng-container>
+    <ng-template #listSouvenirSkelton>
+      <app-list-item-skeleton></app-list-item-skeleton>
+    </ng-template>
   </div>
 </ion-content>
 
